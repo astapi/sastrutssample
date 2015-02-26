@@ -1,0 +1,47 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'war'
+apply plugin: 'eclipse'
+
+group = 'com.tamai'
+version = '1.0'
+
+description = """"""
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+
+
+
+repositories {
+        
+     maven { url "http://maven.seasar.org/maven2" }
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'jstl', name: 'jstl', version:'1.1.2'
+    compile group: 'taglibs', name: 'standard', version:'1.1.2'
+    compile group: 'commons-collections', name: 'commons-collections', version:'3.1'
+    compile group: 'commons-el', name: 'commons-el', version:'1.0'
+    compile group: 'commons-fileupload', name: 'commons-fileupload', version:'1.2'
+    compile group: 'commons-io', name: 'commons-io', version:'1.3.2'
+    compile(group: 'commons-logging', name: 'commons-logging', version:'1.1') {
+exclude(module: 'avalon-framework')
+exclude(module: 'logkit')
+exclude(module: 'servlet-api')
+    }
+    compile group: 'commons-validator', name: 'commons-validator', version:'1.2.0'
+    compile group: 'log4j', name: 'log4j', version:'1.2.13'
+    compile group: 'org.seasar.sastruts', name: 'sa-struts', version:'1.0.4-sp9'
+    compile group: 'org.apache.geronimo.specs', name: 'geronimo-annotation_1.0_spec', version:'1.0'
+    compile group: 'org.apache.geronimo.specs', name: 'geronimo-ejb_3.0_spec', version:'1.0'
+    compile group: 'org.apache.geronimo.specs', name: 'geronimo-interceptor_3.0_spec', version:'1.0'
+    compile group: 'org.apache.geronimo.specs', name: 'geronimo-jpa_3.0_spec', version:'1.0'
+    compile group: 'org.apache.geronimo.specs', name: 'geronimo-jta_1.1_spec', version:'1.0'
+    testCompile group: 'junit', name: 'junit', version:'3.8.2'
+    testCompile group: 'org.easymock', name: 'easymock', version:'2.2'
+    providedCompile group: 'org.apache.geronimo.specs', name: 'geronimo-jsp_2.0_spec', version:'1.0'
+    providedCompile group: 'org.apache.geronimo.specs', name: 'geronimo-servlet_2.4_spec', version:'1.0'
+    providedCompile group: 'xalan', name: 'xalan', version:'2.5.1'
+    providedCompile group: 'xml-apis', name: 'xml-apis', version:'2.0.2'
+}
